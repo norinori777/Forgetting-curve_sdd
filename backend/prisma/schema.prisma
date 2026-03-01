@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReviewResult {
+  success
+  failure
+}
+
+model LearningItem {
+  id        String   @id @default(uuid())
+  title     String
+  content   String?
+  tags      String[] @default([])
+  status    String   @default("active")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  schedule ReviewSchedule?
+  events   ReviewEvent[]
+}
+
+model ReviewSchedule {
+  learningItemId String   @id
+  dueOn          DateTime @db.Date
+  stage          Int      @default(0)
+  lastReviewedOn DateTime? @db.Date
+  updatedAt      DateTime @updatedAt
+
+  learningItem LearningItem @relation(fields: [learningItemId], references: [id], onDelete: Cascade)
+}
+
+model ReviewEvent {
+  id             String      @id @default(uuid())
+  learningItemId String
+  reviewedOn     DateTime    @db.Date
+  result         ReviewResult
+  difficulty     Int?
+  memo           String?
+
+  scheduledDueOn DateTime @db.Date
+  scheduledStage Int
+
+  createdAt DateTime @default(now())
+
+  learningItem LearningItem @relation(fields: [learningItemId], references: [id], onDelete: Cascade)
+
+  @@index([learningItemId])
+  @@index([reviewedOn])
+}
+
+model ReviewPreset {
+  id            String   @id @default(uuid())
+  name          String   @unique
+  intervalsDays Int[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  settingsActive Settings[] @relation("ActivePreset")
+}
+
+model Settings {
+  id                  Int    @id @default(1)
+  activeReviewPresetId String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  activeReviewPreset ReviewPreset @relation("ActivePreset", fields: [activeReviewPresetId], references: [id])
+}

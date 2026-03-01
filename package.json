@@ -1,0 +1,9 @@
+{
+  "name": "forgetting-curve",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ]
+}

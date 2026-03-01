@@ -17,28 +17,31 @@
 
 ## Phase 1: Setup（Shared Infrastructure）
 
-- [ ] T001 リポジトリ直下に npm workspaces を設定する `package.json`
-- [ ] T002 [P] 共有パッケージの土台を作る `shared/package.json`, `shared/tsconfig.json`, `shared/src/index.ts`
-- [ ] T003 [P] Backend の土台を作る `backend/package.json`, `backend/tsconfig.json`, `backend/src/server.ts`, `backend/src/app.ts`
-- [ ] T004 [P] Frontend を Vite + React + TS で作る `frontend/package.json`, `frontend/vite.config.ts`, `frontend/src/main.tsx`, `frontend/src/app.tsx`
-- [ ] T005 [P] Tailwind をセットアップする `frontend/tailwind.config.ts`, `frontend/postcss.config.js`, `frontend/src/index.css`
-- [ ] T005a [P] フロントエンドのディレクトリ設計を反映する（pages/uniqueParts/uiParts/services/api/hooks/domain/types） `frontend/src/pages/`, `frontend/src/uniqueParts/`, `frontend/src/uiParts/`, `frontend/src/services/api/`, `frontend/src/hooks/`, `frontend/src/domain/types/`
-- [ ] T006 各パッケージから `shared` を参照できるようにする（依存関係/ビルド導線） `backend/package.json`, `frontend/package.json`, `shared/package.json`
+- [X] T001 リポジトリ直下に npm workspaces を設定する `package.json`
+- [X] T002 [P] 共有パッケージの土台を作る `shared/package.json`, `shared/tsconfig.json`, `shared/src/index.ts`
+- [X] T003 [P] Backend の土台を作る `backend/package.json`, `backend/tsconfig.json`, `backend/src/server.ts`, `backend/src/app.ts`
+- [X] T004 [P] Frontend を Vite + React + TS で作る `frontend/package.json`, `frontend/vite.config.ts`, `frontend/src/main.tsx`, `frontend/src/app.tsx`
+- [X] T005 [P] Tailwind をセットアップする `frontend/tailwind.config.ts`, `frontend/postcss.config.js`, `frontend/src/index.css`
+- [X] T005a [P] フロントエンドのディレクトリ設計を反映する（pages/uniqueParts/uiParts/services/api/hooks/domain/types） `frontend/src/pages/`, `frontend/src/uniqueParts/`, `frontend/src/uiParts/`, `frontend/src/services/api/`, `frontend/src/hooks/`, `frontend/src/domain/types/`
+- [X] T006 各パッケージから `shared` を参照できるようにする（依存関係/ビルド導線） `backend/package.json`, `frontend/package.json`, `shared/package.json`
 
 ---
 
 ## Phase 2: Foundational（Blocking Prerequisites）
 
-- [ ] T007 共有のエラー契約と日付ユーティリティを追加する `shared/src/contracts/error.ts`, `shared/src/lib/date.ts`, `shared/src/index.ts`
-- [ ] T008 Backend の環境変数ロードと設定を追加する `backend/src/config/env.ts`
-- [ ] T009 Prisma + PostgreSQL の初期設定を行う `backend/prisma/schema.prisma`, `backend/src/db/prisma.ts`
-- [ ] T010 Prisma に最小スキーマを定義する（LearningItem/ReviewSchedule/ReviewEvent/ReviewPreset/Settings） `backend/prisma/schema.prisma`
-- [ ] T011 既定プリセットと Settings を投入する seed を用意する（任意でサンプル LearningItem / ReviewSchedule / ReviewEvent も投入できる） `backend/prisma/seed.ts`, `backend/src/config/env.ts`
-- [ ] T012 Backend の基盤ミドルウェアを実装する（CORS/JSON/ロギング/エラーハンドリング） `backend/src/app.ts`, `backend/src/lib/logger.ts`, `backend/src/api/middleware/errorHandler.ts`
-- [ ] T013 zod によるリクエスト検証ヘルパーを実装する `backend/src/api/middleware/validate.ts`
-- [ ] T014 API ルーティングの骨組みを作る `backend/src/api/router.ts`, `backend/src/api/routes/health.ts`
-- [ ] T015 Frontend のルーティングとプロバイダを用意する（router/react-query） `frontend/src/pages/routes.tsx`, `frontend/src/hooks/queryClient.ts`, `frontend/src/app.tsx`
-- [ ] T016 APIクライアント（axios）を共通化する（薄く） `frontend/src/services/api/http.ts`
+- [X] T007 共有のエラー契約と日付ユーティリティを追加する `shared/src/contracts/error.ts`, `shared/src/lib/date.ts`, `shared/src/index.ts`
+- [X] T008 Backend の環境変数ロードと設定を追加する `backend/src/config/env.ts`
+- [X] T008a Backend の環境変数テンプレート（例）を追加し、手順に反映する `backend/.env.example`, `specs/001-forgetting-curve-manager/quickstart.md`
+- [X] T009 Prisma + PostgreSQL の初期設定を行う `backend/prisma/schema.prisma`, `backend/src/db/prisma.ts`
+- [X] T009a Prisma migrate/generate を実行してDBに反映する（手動検証） `specs/001-forgetting-curve-manager/quickstart.md`
+- [X] T010 Prisma に最小スキーマを定義する（LearningItem/ReviewSchedule/ReviewEvent/ReviewPreset/Settings） `backend/prisma/schema.prisma`
+- [X] T011 既定プリセットと Settings を投入する seed を用意する（任意でサンプル LearningItem / ReviewSchedule / ReviewEvent も投入できる） `backend/prisma/seed.ts`, `backend/src/config/env.ts`
+- [X] T011a seed を実行して既定データをDBに投入する（手動検証） `specs/001-forgetting-curve-manager/quickstart.md`
+- [X] T012 Backend の基盤ミドルウェアを実装する（CORS/JSON/ロギング/エラーハンドリング） `backend/src/app.ts`, `backend/src/lib/logger.ts`, `backend/src/api/middleware/errorHandler.ts`
+- [X] T013 zod によるリクエスト検証ヘルパーを実装する `backend/src/api/middleware/validate.ts`
+- [X] T014 API ルーティングの骨組みを作る `backend/src/api/router.ts`, `backend/src/api/routes/health.ts`
+- [X] T015 Frontend のルーティングとプロバイダを用意する（router/react-query） `frontend/src/pages/routes.tsx`, `frontend/src/hooks/queryClient.ts`, `frontend/src/app.tsx`
+- [X] T016 APIクライアント（axios）を共通化する（薄く） `frontend/src/services/api/http.ts`
 
 **Checkpoint**: Backend/Frontend が起動でき、`shared` を参照でき、DBマイグレーション/seed が動かせる状態。
 
@@ -50,18 +53,18 @@
 
 **Independent Test**: 学習項目を1件登録し、直後に一覧に表示され、次回復習予定日が確認できる。
 
-- [ ] T017 [P] [US1] 学習項目のAPI契約（zod）を定義する `shared/src/contracts/items.ts`, `shared/src/index.ts`
-- [ ] T018 [P] [US1] スケジュール計算ユーティリティを実装する（dueOn = today + intervalsDays[stage]） `backend/src/services/scheduler/calcDueOn.ts`
-- [ ] T019 [US1] 学習項目作成時に ReviewSchedule を初期化するサービスを実装する `backend/src/services/items/itemsService.ts`
-- [ ] T020 [US1] POST `/api/items` を実装する `backend/src/api/routes/items.ts`
-- [ ] T021 [US1] GET `/api/items`（dueOn昇順）を実装する `backend/src/api/routes/items.ts`
-- [ ] T022 [US1] GET `/api/items/:id` を実装する（item + schedule + recentEvents） `backend/src/api/routes/items.ts`
-- [ ] T023 [US1] PATCH `/api/items/:id` を実装する `backend/src/api/routes/items.ts`
-- [ ] T024 [US1] DELETE `/api/items/:id` を実装する（関連 schedule/events の扱いも決めて実装） `backend/src/api/routes/items.ts`
-- [ ] T025 [P] [US1] 学習項目のフロントAPIクライアントを作る `frontend/src/services/api/items.ts`
-- [ ] T026 [US1] 一覧ページ（追加フォーム＋一覧）を実装する（スマホ/タブレット/PCで操作できるようレスポンシブ対応） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/uniqueParts/items/ItemForm.tsx`, `frontend/src/uniqueParts/items/ItemsTable.tsx`
-- [ ] T027 [US1] 期限切れ（dueOn < today）を識別表示する（レスポンシブ表示を崩さない） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/uniqueParts/items/ItemsTable.tsx`
-- [ ] T028 [US1] ルーティングに一覧ページを登録する `frontend/src/pages/routes.tsx`
+- [X] T017 [P] [US1] 学習項目のAPI契約（zod）を定義する `shared/src/contracts/items.ts`, `shared/src/index.ts`
+- [X] T018 [P] [US1] スケジュール計算ユーティリティを実装する（dueOn = today + intervalsDays[stage]） `backend/src/services/scheduler/calcDueOn.ts`
+- [X] T019 [US1] 学習項目作成時に ReviewSchedule を初期化するサービスを実装する `backend/src/services/items/itemsService.ts`
+- [X] T020 [US1] POST `/api/items` を実装する `backend/src/api/routes/items.ts`
+- [X] T021 [US1] GET `/api/items`（dueOn昇順）を実装する `backend/src/api/routes/items.ts`
+- [X] T022 [US1] GET `/api/items/:id` を実装する（item + schedule + recentEvents） `backend/src/api/routes/items.ts`
+- [X] T023 [US1] PATCH `/api/items/:id` を実装する `backend/src/api/routes/items.ts`
+- [X] T024 [US1] DELETE `/api/items/:id` を実装する（関連 schedule/events の扱いも決めて実装） `backend/src/api/routes/items.ts`
+- [X] T025 [P] [US1] 学習項目のフロントAPIクライアントを作る `frontend/src/services/api/items.ts`
+- [X] T026 [US1] 一覧ページ（追加フォーム＋一覧）を実装する（スマホ/タブレット/PCで操作できるようレスポンシブ対応） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/uniqueParts/items/ItemForm.tsx`, `frontend/src/uniqueParts/items/ItemsTable.tsx`
+- [X] T027 [US1] 期限切れ（dueOn < today）を識別表示する（レスポンシブ表示を崩さない） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/uniqueParts/items/ItemsTable.tsx`
+- [X] T028 [US1] ルーティングに一覧ページを登録する `frontend/src/pages/routes.tsx`
 
 **Checkpoint**: US1 のみで価値が成立（登録→一覧→予定日可視化）。
 
@@ -109,7 +112,7 @@
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T047 [P] quickstart の手順で実際に起動確認し、必要なら手順を更新する（主要画面をスマホ/タブレット/PC幅で目視確認） `specs/001-forgetting-curve-manager/quickstart.md`
+- [X] T047 [P] quickstart の手順で実際に起動確認し、必要なら手順を更新する（主要画面をスマホ/タブレット/PC幅で目視確認） `specs/001-forgetting-curve-manager/quickstart.md`
 - [ ] T048 APIエラーの表示を各ページで最小限整備する（失敗時にユーザーが原因を把握できる） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/pages/ReviewPage.tsx`, `frontend/src/pages/PresetsPage.tsx`, `frontend/src/pages/StatsPage.tsx`
 
 （注）汎用UIは既存前提のため、追加実装が必要な場合は `frontend/src/uiParts/` 配下に作成する。
