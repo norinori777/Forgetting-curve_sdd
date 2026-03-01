@@ -13,8 +13,6 @@
 - npm（またはpnpm/yarn）
 - PostgreSQL（ローカルで起動できること）
 
-（注）本リポジトリは現時点でソースコード未配置のため、ここに記載するコマンド名/構成は plan.md と contracts/api.md に基づく想定。
-
 ---
 
 ## Setup（実装後）
@@ -26,11 +24,13 @@
   - `npm install`
 
 - 環境変数（例）
-  - `DATABASE_URL=postgresql://...`
+  - `backend/.env.example` を `backend/.env` にコピーして編集
+  - `DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/DBNAME?schema=public`
 
 - Prismaセットアップ（例）
-  - `npx prisma migrate dev`
-  - `npx prisma generate`
+  - `npm run migrate`
+  - `npm run generate`
+  - （既定データ投入）`npm run seed`
 
 ### Frontend Setup
 
