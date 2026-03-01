@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/hooks/queryclient.ts","./src/pages/itemspage.tsx","./src/pages/routes.tsx","./src/services/api/http.ts","./src/services/api/items.ts","./src/uiparts/modal.tsx","./src/uniqueparts/items/itemform.tsx","./src/uniqueparts/items/itemstable.tsx"],"version":"5.9.3"}
