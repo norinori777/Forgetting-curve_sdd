@@ -1,8 +1,76 @@
 {
-  "hash": "eb482714",
+  "hash": "11146b18",
   "configHash": "74a5cddc",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "c9f98237",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "c94a31df",
+  "browserHash": "508a8468",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "1839fb71",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "00ad7d4c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "51591fb5",
+      "needsInterop": true
+    },
+    "@tanstack/react-query": {
+      "src": "../../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "95b50c00",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "153a5556",
+      "needsInterop": false
+    },
+    "@hookform/resolvers/zod": {
+      "src": "../../../node_modules/@hookform/resolvers/zod/dist/zod.mjs",
+      "file": "@hookform_resolvers_zod.js",
+      "fileHash": "841bdaef",
+      "needsInterop": false
+    },
+    "react-hook-form": {
+      "src": "../../../node_modules/react-hook-form/dist/index.esm.mjs",
+      "file": "react-hook-form.js",
+      "fileHash": "57e9b9e7",
+      "needsInterop": false
+    },
+    "zod": {
+      "src": "../../../node_modules/zod/index.js",
+      "file": "zod.js",
+      "fileHash": "fa165495",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "ae79942e",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-W4EOUOST": {
+      "file": "chunk-W4EOUOST.js"
+    },
+    "chunk-OCUO3DZC": {
+      "file": "chunk-OCUO3DZC.js"
+    },
+    "chunk-XLZB5FQT": {
+      "file": "chunk-XLZB5FQT.js"
+    },
+    "chunk-4MBMRILA": {
+      "file": "chunk-4MBMRILA.js"
+    }
+  }
 }

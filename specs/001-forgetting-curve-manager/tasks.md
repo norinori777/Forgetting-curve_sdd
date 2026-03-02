@@ -76,17 +76,17 @@
 
 **Independent Test**: 1件の学習項目に対して復習結果を登録し、次回復習予定日が更新されることを確認できる。
 
-- [ ] T029 [P] [US2] 復習/プリセットのAPI契約（zod）を定義する `shared/src/contracts/reviews.ts`, `shared/src/contracts/presets.ts`, `shared/src/index.ts`
-- [ ] T030 [US2] 復習記録とスケジュール更新のドメインロジックを実装する（成功でstage+1、失敗でstage=0、クランプ、イベントに予定日/ステージをスナップショット） `backend/src/services/reviews/reviewService.ts`
-- [ ] T031 [US2] POST `/api/items/:id/reviews` を実装する `backend/src/api/routes/reviews.ts`
-- [ ] T032 [US2] items ルートに reviews ルートを組み込む `backend/src/api/routes/items.ts`, `backend/src/api/router.ts`
-- [ ] T033 [US2] プリセット一覧/アクティブ取得を実装する GET `/api/presets` `backend/src/api/routes/presets.ts`
-- [ ] T034 [US2] プリセット編集を実装する PATCH `/api/presets/:id` `backend/src/api/routes/presets.ts`
-- [ ] T035 [US2] アクティブプリセット切替を実装する PUT `/api/presets/active` `backend/src/api/routes/presets.ts`
-- [ ] T036 [P] [US2] 復習/プリセットのフロントAPIクライアントを作る `frontend/src/services/api/reviews.ts`, `frontend/src/services/api/presets.ts`
-- [ ] T037 [US2] 復習ページを実装する（対象条件はURLクエリで保持、success/failure 必須、difficulty/memo 任意、レスポンシブ対応） `frontend/src/pages/ReviewPage.tsx`, `frontend/src/uniqueParts/review/ReviewForm.tsx`
-- [ ] T038 [US2] プリセット編集ページを実装する（intervalsDays配列編集＋active切替、レスポンシブ対応） `frontend/src/pages/PresetsPage.tsx`, `frontend/src/uniqueParts/presets/PresetEditor.tsx`
-- [ ] T039 [US2] ルーティングに復習/プリセットページを登録する `frontend/src/pages/routes.tsx`
+- [X] T029 [P] [US2] 復習/プリセットのAPI契約（zod）を定義する `shared/src/contracts/reviews.ts`, `shared/src/contracts/presets.ts`, `shared/src/index.ts`
+- [X] T030 [US2] 復習記録とスケジュール更新のドメインロジックを実装する（成功でstage+1、失敗でstage=0、クランプ、イベントに予定日/ステージをスナップショット） `backend/src/services/reviews/reviewService.ts`
+- [X] T031 [US2] POST `/api/items/:id/reviews` を実装する `backend/src/api/routes/reviews.ts`
+- [X] T032 [US2] items ルートに reviews ルートを組み込む `backend/src/api/routes/items.ts`, `backend/src/api/router.ts`
+- [X] T033 [US2] プリセット一覧/アクティブ取得を実装する GET `/api/presets` `backend/src/api/routes/presets.ts`
+- [X] T034 [US2] プリセット編集を実装する PATCH `/api/presets/:id` `backend/src/api/routes/presets.ts`
+- [X] T035 [US2] アクティブプリセット切替を実装する PUT `/api/presets/active` `backend/src/api/routes/presets.ts`
+- [X] T036 [P] [US2] 復習/プリセットのフロントAPIクライアントを作る `frontend/src/services/api/reviews.ts`, `frontend/src/services/api/presets.ts`
+- [X] T037 [US2] 復習ページを実装する（対象条件はURLクエリで保持、success/failure 必須、difficulty/memo 任意、レスポンシブ対応） `frontend/src/pages/ReviewPage.tsx`, `frontend/src/uniqueParts/review/ReviewForm.tsx`
+- [X] T038 [US2] プリセット編集ページを実装する（intervalsDays配列編集＋active切替、レスポンシブ対応） `frontend/src/pages/PresetsPage.tsx`, `frontend/src/uniqueParts/presets/PresetEditor.tsx`
+- [X] T039 [US2] ルーティングに復習/プリセットページを登録する `frontend/src/pages/routes.tsx`
 
 **Checkpoint**: US2 のみで「復習→記録→次回予定更新」が成立。
 
@@ -98,13 +98,13 @@
 
 **Independent Test**: 複数の復習履歴を作成し、直近7日等の期間で集計値が確認できる。
 
-- [ ] T040 [P] [US3] 集計API契約（zod）を定義する `shared/src/contracts/stats.ts`, `shared/src/index.ts`
-- [ ] T041 [US3] 集計ロジックを実装する（期限内=reviewedOn == scheduledDueOn、遅延=reviewedOn > scheduledDueOn） `backend/src/services/stats/statsService.ts`
-- [ ] T042 [US3] GET `/api/stats?from&to` を実装する `backend/src/api/routes/stats.ts`
-- [ ] T043 [US3] router に stats ルートを登録する `backend/src/api/router.ts`
-- [ ] T044 [P] [US3] 集計のフロントAPIクライアントを作る `frontend/src/services/api/stats.ts`
-- [ ] T045 [US3] 集計ページを実装する（期間はURLクエリで保持、少なくとも直近7日プリセットを提供、レスポンシブ対応） `frontend/src/pages/StatsPage.tsx`, `frontend/src/uniqueParts/stats/StatsRangePicker.tsx`
-- [ ] T046 [US3] ルーティングに集計ページを登録する `frontend/src/pages/routes.tsx`
+- [X] T040 [P] [US3] 集計API契約（zod）を定義する `shared/src/contracts/stats.ts`, `shared/src/index.ts`
+- [X] T041 [US3] 集計ロジックを実装する（期限内=reviewedOn == scheduledDueOn、遅延=reviewedOn > scheduledDueOn） `backend/src/services/stats/statsService.ts`
+- [X] T042 [US3] GET `/api/stats?from&to` を実装する `backend/src/api/routes/stats.ts`
+- [X] T043 [US3] router に stats ルートを登録する `backend/src/api/router.ts`
+- [X] T044 [P] [US3] 集計のフロントAPIクライアントを作る `frontend/src/services/api/stats.ts`
+- [X] T045 [US3] 集計ページを実装する（期間はURLクエリで保持、少なくとも直近7日プリセットを提供、レスポンシブ対応） `frontend/src/pages/StatsPage.tsx`, `frontend/src/uniqueParts/stats/StatsRangePicker.tsx`
+- [X] T046 [US3] ルーティングに集計ページを登録する `frontend/src/pages/routes.tsx`
 
 **Checkpoint**: US3 のみで「期間指定→集計表示」が成立。
 
@@ -113,7 +113,7 @@
 ## Phase 6: Polish & Cross-Cutting Concerns
 
 - [X] T047 [P] quickstart の手順で実際に起動確認し、必要なら手順を更新する（主要画面をスマホ/タブレット/PC幅で目視確認） `specs/001-forgetting-curve-manager/quickstart.md`
-- [ ] T048 APIエラーの表示を各ページで最小限整備する（失敗時にユーザーが原因を把握できる） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/pages/ReviewPage.tsx`, `frontend/src/pages/PresetsPage.tsx`, `frontend/src/pages/StatsPage.tsx`
+- [X] T048 APIエラーの表示を各ページで最小限整備する（失敗時にユーザーが原因を把握できる） `frontend/src/pages/ItemsPage.tsx`, `frontend/src/pages/ReviewPage.tsx`, `frontend/src/pages/PresetsPage.tsx`, `frontend/src/pages/StatsPage.tsx`
 
 （注）汎用UIは既存前提のため、追加実装が必要な場合は `frontend/src/uiParts/` 配下に作成する。
 

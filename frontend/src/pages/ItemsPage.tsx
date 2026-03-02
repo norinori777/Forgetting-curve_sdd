@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 import { deleteItem, getItems, postItem } from "../services/api/items";
+import { getApiErrorMessage } from "../services/api/error";
 import { Modal } from "../uiParts/Modal";
 import { ItemForm } from "../uniqueParts/items/ItemForm";
 import { ItemsTable } from "../uniqueParts/items/ItemsTable";
@@ -33,8 +35,23 @@ export function ItemsPage() {
   return (
     <main className="app-page">
       <header className="app-header">
-        <h1 className="app-h1">学習項目</h1>
-        <p className="app-muted">項目を追加し、次回復習予定日を確認します。</p>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h1 className="app-h1">学習項目</h1>
+            <p className="app-muted">項目を追加し、次回復習予定日を確認します。</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Link className="app-button-secondary" to="/review">
+              復習
+            </Link>
+            <Link className="app-button-secondary" to="/presets">
+              プリセット
+            </Link>
+            <Link className="app-button-secondary" to="/stats">
+              集計
+            </Link>
+          </div>
+        </div>
       </header>
 
       {isCreateModalOpen && (
@@ -69,7 +86,9 @@ export function ItemsPage() {
             onSubmit={(value) => createMutation.mutate(value)}
           />
           {createMutation.isError && (
-            <div className="app-error-box">追加に失敗しました。</div>
+            <div className="app-error-box">
+              {getApiErrorMessage(createMutation.error) ?? "追加に失敗しました。"}
+            </div>
           )}
         </Modal>
       )}
@@ -90,7 +109,9 @@ export function ItemsPage() {
         </div>
         {itemsQuery.isLoading && <p className="app-muted">読み込み中...</p>}
         {itemsQuery.isError && (
-          <div className="app-error-box">取得に失敗しました。</div>
+          <div className="app-error-box">
+            {getApiErrorMessage(itemsQuery.error) ?? "取得に失敗しました。"}
+          </div>
         )}
         {itemsQuery.data && (
           <ItemsTable

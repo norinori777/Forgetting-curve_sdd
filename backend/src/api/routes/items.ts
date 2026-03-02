@@ -9,6 +9,7 @@ import {
 } from "@fc/shared";
 
 import { validate } from "../middleware/validate";
+import { reviewsRouter } from "./reviews";
 import {
   createItem,
   deleteItem,
@@ -18,6 +19,8 @@ import {
 } from "../../services/items/itemsService";
 
 export const itemsRouter = Router();
+
+itemsRouter.use(reviewsRouter);
 
 const ItemIdParamsSchema = z.object({
   id: z.string(),
