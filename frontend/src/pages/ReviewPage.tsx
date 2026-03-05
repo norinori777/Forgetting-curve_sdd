@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 import { compareIsoDate, todayIsoDate } from "@fc/shared";
 
@@ -77,17 +77,6 @@ export function ReviewPage() {
           <div>
             <h1 className="app-h1">復習</h1>
             <p className="app-muted">対象を選び、成功/失敗を記録します。</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Link className="app-button-secondary" to="/">
-              学習項目
-            </Link>
-            <Link className="app-button-secondary" to="/presets">
-              プリセット
-            </Link>
-            <Link className="app-button-secondary" to="/stats">
-              集計
-            </Link>
           </div>
         </div>
       </header>
