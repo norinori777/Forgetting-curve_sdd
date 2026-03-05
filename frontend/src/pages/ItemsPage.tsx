@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
 
 import { deleteItem, getItems, postItem } from "../services/api/items";
 import { getApiErrorMessage } from "../services/api/error";
@@ -39,17 +38,6 @@ export function ItemsPage() {
           <div>
             <h1 className="app-h1">学習項目</h1>
             <p className="app-muted">項目を追加し、次回復習予定日を確認します。</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Link className="app-button-secondary" to="/review">
-              復習
-            </Link>
-            <Link className="app-button-secondary" to="/presets">
-              プリセット
-            </Link>
-            <Link className="app-button-secondary" to="/stats">
-              集計
-            </Link>
           </div>
         </div>
       </header>

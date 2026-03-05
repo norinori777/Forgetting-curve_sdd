@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 import { addDays, todayIsoDate } from "@fc/shared";
 
@@ -43,17 +43,6 @@ export function StatsPage() {
           <div>
             <h1 className="app-h1">集計</h1>
             <p className="app-muted">指定期間の期限内/遅延/成功率を確認します。</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Link className="app-button-secondary" to="/">
-              学習項目
-            </Link>
-            <Link className="app-button-secondary" to="/review">
-              復習
-            </Link>
-            <Link className="app-button-secondary" to="/presets">
-              プリセット
-            </Link>
           </div>
         </div>
       </header>

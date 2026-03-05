@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
 
 import { getApiErrorMessage } from "../services/api/error";
 import { getPresets, patchPreset, putActivePreset } from "../services/api/presets";
@@ -41,17 +40,6 @@ export function PresetsPage() {
           <div>
             <h1 className="app-h1">プリセット</h1>
             <p className="app-muted">復習間隔を編集し、アクティブを切り替えます。</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Link className="app-button-secondary" to="/">
-              学習項目
-            </Link>
-            <Link className="app-button-secondary" to="/review">
-              復習
-            </Link>
-            <Link className="app-button-secondary" to="/stats">
-              集計
-            </Link>
           </div>
         </div>
       </header>
