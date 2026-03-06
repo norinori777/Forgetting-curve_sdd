@@ -10,6 +10,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-24
 - TypeScript（frontend: React + Vite） + React, Vite, Tailwind CSS, @tanstack/react-query, react-hook-form, zod (003-item-add-modal)
 - N/A（本featureはフロントの表示/導線変更のみ） (003-item-add-modal)
 - TypeScript 5.x + React 18.3, react-router-dom 6.28, Vite 5.4, Tailwind CSS 3.4（frontend） / Express 4.19, Prisma 5.20（backend） (005-header-menu-design)
+- TypeScript 5.x（frontend/backend/shared） + React 18.3, react-router-dom 6.28, Vite 5.4, Tailwind CSS 3.4 (001-header-menu-text)
+- N/A（本featureはフロントのナビ表示変更のみ） (001-header-menu-text)
 
 ## Project Structure
 
@@ -32,9 +34,9 @@ cd frontend; npm test
 TypeScript: Follow existing lint/format rules in the repo
 
 ## Recent Changes
+- 001-header-menu-text: Added TypeScript 5.x（frontend/backend/shared） + React 18.3, react-router-dom 6.28, Vite 5.4, Tailwind CSS 3.4
 - 005-header-menu-design: Added TypeScript 5.x + React 18.3, react-router-dom 6.28, Vite 5.4, Tailwind CSS 3.4（frontend） / Express 4.19, Prisma 5.20（backend）
 - 003-item-add-modal: Added TypeScript（frontend: React + Vite） + React, Vite, Tailwind CSS, @tanstack/react-query, react-hook-form, zod
-- 002-mui-pastel-theme: Added TypeScript（frontend/backend）, Node.js（LTS想定） + React 18 + Vite, react-router-dom, @tanstack/react-query, axios, react-hook-form, zod, Tailwind CSS
 
 
 <!-- MANUAL ADDITIONS START -->

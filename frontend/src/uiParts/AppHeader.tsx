@@ -5,9 +5,11 @@ const APP_NAME = "Forgetting-curve";
 type MenuItem = {
   label: string;
   to: string;
+  end?: boolean;
 };
 
 const MENU_ITEMS: MenuItem[] = [
+  { label: "学習項目", to: "/", end: true },
   { label: "復習", to: "/review" },
   { label: "集計", to: "/stats" },
   { label: "設定（プリセット）", to: "/presets" },
@@ -30,15 +32,16 @@ export function AppHeader() {
         </div>
 
         <nav className="w-full sm:flex-1" aria-label="Primary">
-          <div className="flex justify-evenly gap-2">
+          <div className="flex flex-wrap justify-evenly gap-x-6 gap-y-2">
             {MENU_ITEMS.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
+                end={item.end}
                 className={({ isActive }) =>
                   isActive
-                    ? "app-button-primary w-auto"
-                    : "app-button-secondary w-auto"
+                    ? "no-underline text-sm font-semibold text-slate-600"
+                    : "no-underline text-sm font-medium text-slate-600 hover:text-slate-900"
                 }
               >
                 {item.label}
